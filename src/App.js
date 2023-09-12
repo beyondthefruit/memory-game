@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { useSpring, a } from '@react-spring/web';
+import cards from './data';
+import './index.css';
 
 function App() {
+  const { card, setCard } = useState(cards);
+  const [flipped, set] = useState(false);
+  const { transform, opacity } = useSpring({
+    opacity: flipped ? 1 : 0,
+    transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
+    config: { mass: 5, tension: 500, friction: 80 },
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div className='container' onClick={() => set((flipped) => !flipped)}>
+        <a.div
+          className='c back'
+          style={{ opacity: opacity.to((o) => 1 - o), transform }}
+        />
+        <a.div
+          className='c front'
+          style={{
+            opacity,
+            transform,
+            rotateX: '180deg',
+          }}
+        />
+      </div>
     </div>
   );
 }
