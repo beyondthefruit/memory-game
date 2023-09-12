@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { useSpring, a } from '@react-spring/web';
 import cards from './data';
 import './index.css';
+import Memory from './components/memory';
 
 function App() {
-  const { card, setCard } = useState(cards);
+  const [card, setCard] = useState(cards);
   const [flipped, set] = useState(false);
   const { transform, opacity } = useSpring({
     opacity: flipped ? 1 : 0,
@@ -27,6 +28,7 @@ function App() {
           }}
         />
       </div>
+      <Memory card={card} />
     </div>
   );
 }

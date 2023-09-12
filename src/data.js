@@ -64,6 +64,36 @@ const cards = [
     name: 'star',
     img: require('./imgs/star.png'),
   },
+  {
+    id: 14,
+    name: 'mushroom',
+    img: require('./imgs/mushroom.png'),
+  },
+  {
+    id: 15,
+    name: 'mushroom',
+    img: require('./imgs/mushroom.png'),
+  },
+  {
+    id: 16,
+    name: 'flower',
+    img: require('./imgs/flower.png'),
+  },
+  {
+    id: 17,
+    name: 'flower',
+    img: require('./imgs/flower.png'),
+  },
+  {
+    id: 18,
+    name: 'star',
+    img: require('./imgs/star.png'),
+  },
+  {
+    id: 19,
+    name: 'star',
+    img: require('./imgs/star.png'),
+  },
 ];
 
 export default cards;
