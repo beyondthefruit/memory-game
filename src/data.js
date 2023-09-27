@@ -1,9 +1,9 @@
 const cards = [
-  {
-    id: 1,
-    name: 'front',
-    img: require('./imgs/front.png'),
-  },
+  // {
+  //   id: 1,
+  //   name: 'front',
+  //   img: require('./imgs/front.png'),
+  // },
   {
     id: 2,
     name: 'mushroom',
