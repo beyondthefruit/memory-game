@@ -8,10 +8,13 @@ const Memory = ({
   currcards,
   timeout,
   check,
+  cardo,
+  cardWin,
 }) => {
   // const [save, setSave] = useState(null);
   console.log('this is curr', currcards);
   console.log('cur 1 name', currcards[0]);
+  console.log('cur 2 name', currcards[1]);
 
   const handleCardClick = (index) => {
     if (currcards.length === 1) {
@@ -38,9 +41,9 @@ const Memory = ({
   const handleClick = (index, name) => {
     !checkIsFlipped(index) && handleCardClick(index);
     console.log(index);
-    // setFlip(!flip);
-    // const updatedid = index;
-    // setSave(updatedid);
+  };
+  const hideCard = (index) => {
+    return cardWin.includes(index);
   };
 
   console.log(card);
@@ -51,7 +54,9 @@ const Memory = ({
         return (
           <div
             key={id}
-            className={`card-game ${checkIsFlipped(id) ? 'flip' : ''}`}
+            className={`card-game ${checkIsFlipped(id) ? 'flip' : ''} ${
+              hideCard(id) ? 'card-won' : ''
+            }`}
             // className={`card-game ${flip && save == id ? 'flip' : ''}`}
             onClick={() => handleClick(id)}
           >
