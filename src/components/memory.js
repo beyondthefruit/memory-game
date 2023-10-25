@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 const Memory = ({
   card,
   cards,
@@ -7,8 +7,12 @@ const Memory = ({
   setCurrcards,
   currcards,
   timeout,
+  check,
 }) => {
   // const [save, setSave] = useState(null);
+  console.log('this is curr', currcards);
+  console.log('cur 1 name', currcards[0]);
+
   const handleCardClick = (index) => {
     if (currcards.length === 1) {
       setCurrcards((prev) => [...prev, index]);
@@ -17,11 +21,21 @@ const Memory = ({
       setCurrcards([index]);
     }
   };
+  useEffect(() => {
+    let timeout = null;
+    console.log(currcards.length);
+    if (currcards.length === 2) {
+      timeout = setTimeout(check, 900);
+    }
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [currcards]);
   console.log('currcard', currcards);
   const checkIsFlipped = (index) => {
     return currcards.includes(index);
   };
-  const handleClick = (index) => {
+  const handleClick = (index, name) => {
     !checkIsFlipped(index) && handleCardClick(index);
     console.log(index);
     // setFlip(!flip);
