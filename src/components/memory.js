@@ -42,7 +42,7 @@ const Memory = ({
     !checkIsFlipped(index) && handleCardClick(index);
     // console.log(index);
   };
-  const hideCard = (index) => {
+  const flipWinCard = (index) => {
     return cardWin.includes(index);
   };
 
@@ -55,7 +55,7 @@ const Memory = ({
           <div
             key={id}
             className={`card-game ${checkIsFlipped(id) ? 'flip' : ''} ${
-              hideCard(id) ? 'card-won' : ''
+              flipWinCard(id) ? 'flip' : ''
             }`}
             // className={`card-game ${flip && save == id ? 'flip' : ''}`}
             onClick={() => handleClick(id)}
