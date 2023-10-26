@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Select from '../memoryselect(mp3cut.net).mp3';
 const Memory = ({
   card,
   cards,
@@ -8,14 +9,13 @@ const Memory = ({
   currcards,
   timeout,
   check,
-  cardo,
   cardWin,
 }) => {
   // const [save, setSave] = useState(null);
   // console.log('this is curr', currcards);
   // console.log('cur 1 name', currcards[0]);
   // console.log('cur 2 name', currcards[1]);
-
+  let SelectSong = new Audio(Select);
   const handleCardClick = (index) => {
     if (currcards.length === 1) {
       setCurrcards((prev) => [...prev, index]);
@@ -58,7 +58,11 @@ const Memory = ({
               flipWinCard(id) ? 'flip' : ''
             }`}
             // className={`card-game ${flip && save == id ? 'flip' : ''}`}
-            onClick={() => handleClick(id)}
+            // onClick={() => handleClick(id)}
+            onClick={() => {
+              handleClick(id);
+              SelectSong.play();
+            }}
           >
             {/* <p>{name}</p> */}
             <div className='card font-face'>

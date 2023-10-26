@@ -30,19 +30,19 @@ body {
 }
 
 .memory-game {
-  width: 640px;
+  width: 720px;
   height: 640px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 30px;
   perspective: 1000px;
 }
 .card-game {
   width: 90px;
   height: 120px;
   border: 1px white solid;
-  border-radius: 13px;
+  border-radius: 6px;
   transition: 0.5s;
   transform-style: preserve-3d;
   position: relative;
@@ -52,7 +52,7 @@ body {
 .card-game img {
   height: 100%;
   width: 100%;
-  border-radius: 13px;
+
   /* margin: 10px; */
 }
 
@@ -61,8 +61,14 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
+
   &.back-face {
     transform: rotateY(180deg);
+  }
+  :hover {
+    outline: 10px ridge red;
+    outline-offset: 6px;
+    border-radius: 2px;
   }
 }
 
