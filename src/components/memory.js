@@ -12,9 +12,9 @@ const Memory = ({
   cardWin,
 }) => {
   // const [save, setSave] = useState(null);
-  console.log('this is curr', currcards);
-  console.log('cur 1 name', currcards[0]);
-  console.log('cur 2 name', currcards[1]);
+  // console.log('this is curr', currcards);
+  // console.log('cur 1 name', currcards[0]);
+  // console.log('cur 2 name', currcards[1]);
 
   const handleCardClick = (index) => {
     if (currcards.length === 1) {
@@ -26,7 +26,7 @@ const Memory = ({
   };
   useEffect(() => {
     let timeout = null;
-    console.log(currcards.length);
+    // console.log(currcards.length);
     if (currcards.length === 2) {
       timeout = setTimeout(check, 900);
     }
@@ -34,19 +34,19 @@ const Memory = ({
       clearTimeout(timeout);
     };
   }, [currcards]);
-  console.log('currcard', currcards);
+  // console.log('currcard', currcards);
   const checkIsFlipped = (index) => {
     return currcards.includes(index);
   };
   const handleClick = (index, name) => {
     !checkIsFlipped(index) && handleCardClick(index);
-    console.log(index);
+    // console.log(index);
   };
   const hideCard = (index) => {
     return cardWin.includes(index);
   };
 
-  console.log(card);
+  // console.log(card);
   return (
     <div className='memory-game'>
       {card.map((icard) => {
