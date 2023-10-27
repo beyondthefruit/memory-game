@@ -1,12 +1,10 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Song from './memorysong(mp3cut.net).mp3';
 import Win from './memorywin(mp3cut.net).mp3';
-// import Select from './memoryselect(mp3cut.net).mp3';
-
 import cards from './data';
 import './index.css';
 import Memory from './components/memory';
-import { BiPlayCircle } from 'react-icons/bi';
+import { BiPlayCircle, BiPauseCircle } from 'react-icons/bi';
 
 function App() {
   const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
@@ -14,24 +12,30 @@ function App() {
   const [card, setCard] = useState(shuffleCards);
   const [currcards, setCurrcards] = useState([]);
   const [cardWin, setCardWin] = useState([]);
+  // mgt audio, I was using a var Audio = new Audio but every time I was clicking it started a new audio so fixed it by replacing by useState
+  const [playing, setPlaying] = useState(false);
+  const [audio] = useState(new Audio(Song));
 
-  // const [cardo, setCardo] = useState(cards);
-  const [music, setMusic] = useState(false);
-
-  // const [flip, setFlip] = useState(false);
   const timeout = useRef(null);
 
-  console.log(shuffleCards);
-  console.log(cards);
+  // console.log(shuffleCards);
+  // console.log(cards);
 
-  const getScore = () => {
-    score += 1;
-  };
+  // const getScore = () => {
+  //   score += 1;
+  // };
 
+  // audio logic
   let WinSong = new Audio(Win);
+  // to loop the main theme
+  audio.loop = true;
 
-  let AudioPlay = new Audio(Song);
-  AudioPlay.loop = true;
+  //to manage the play and pause of main audio
+  useEffect(() => {
+    playing ? audio.play() : audio.pause();
+  }, [playing]);
+
+  // check if 2 cards matchs
   const check = () => {
     console.log(card);
     const card1 = cards[currcards[0] - 1];
@@ -53,6 +57,8 @@ function App() {
       return;
     }
   };
+
+  //to start over
   const reset = () => {
     setCurrcards([]);
     setCardWin([]);
@@ -61,10 +67,15 @@ function App() {
   return (
     <div className='App'>
       <div className='banner'>
-        <button className='icon' onClick={() => AudioPlay.play()}>
-          <BiPlayCircle />
+        <button className='iconic' onClick={() => setPlaying(!playing)}>
+          {!playing ? (
+            <BiPlayCircle className='icon' />
+          ) : (
+            <BiPauseCircle className='icon' />
+          )}
         </button>
-        <button className='icon' onClick={() => reset()}>
+
+        <button className='iconic' onClick={() => reset()}>
           Reset
         </button>
       </div>
@@ -72,12 +83,9 @@ function App() {
         card={card}
         currcards={currcards}
         setCurrcards={setCurrcards}
-        // flip={flip}
-        // setFlip={setFlip}
         timeout={timeout}
         check={check}
         cardWin={cardWin}
-        // SelectSong={SelectSong}
       />
     </div>
   );

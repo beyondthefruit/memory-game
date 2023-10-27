@@ -1,20 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Select from '../memoryselect(mp3cut.net).mp3';
-const Memory = ({
-  card,
-  // flip,
-  // setFlip,
-  setCurrcards,
-  currcards,
-  timeout,
-  check,
-  cardWin,
-}) => {
+const Memory = ({ card, setCurrcards, currcards, timeout, check, cardWin }) => {
   // const [save, setSave] = useState(null);
   // console.log('this is curr', currcards);
   // console.log('cur 1 name', currcards[0]);
   // console.log('cur 2 name', currcards[1]);
+
+  // audio select
   let SelectSong = new Audio(Select);
+
+  //
   const handleCardClick = (index) => {
     if (currcards.length === 1) {
       setCurrcards((prev) => [...prev, index]);
@@ -34,6 +29,7 @@ const Memory = ({
     };
   }, [currcards]);
   // console.log('currcard', currcards);
+
   const checkIsFlipped = (index) => {
     return currcards.includes(index);
   };
@@ -56,14 +52,11 @@ const Memory = ({
             className={`card-game ${checkIsFlipped(id) ? 'flip' : ''} ${
               flipWinCard(id) ? 'flip' : ''
             }`}
-            // className={`card-game ${flip && save == id ? 'flip' : ''}`}
-            // onClick={() => handleClick(id)}
             onClick={() => {
               handleClick(id);
               SelectSong.play();
             }}
           >
-            {/* <p>{name}</p> */}
             <div className='card font-face'>
               <img src={require('../imgs/front.png')} alt='front' />
             </div>
