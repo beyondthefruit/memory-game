@@ -11,6 +11,7 @@ body,
 #root {
   font-size: 0.875rem;
   overflow: hidden;
+  background-color: #2e028d;
 }
 
 * {
@@ -20,25 +21,24 @@ body,
 }
 
 .gameboard {
-  height: auto;
+  height: 100vh;
   width: 100vw;
-  background-color: #2e028d;
+
   /* border: red solid 8px; */
 }
 
 .banner {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
-  height: 19%;
+  height: 12%;
   width: 100vw;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 .iconic {
   margin: 1rem;
   padding: 2px 5px 4px;
-  width: 8rem;
-  height: 2.5rem;
+  width: 6rem;
+  height: 2.2rem;
   background-color: #f8eaaf;
   border: 3px solid #c46404;
   cursor: pointer;
@@ -46,29 +46,50 @@ body,
 }
 
 .iconic p {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   color: #2e028d;
 }
 .icon {
   background-color: none;
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: #2e028d;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 650px) {
+  .banner {
+    height: 19%;
+    width: 100vw;
+    padding: 1rem;
+  }
+  .iconic {
+    margin: 1rem;
+    padding: 2px 5px 4px;
+    width: 8rem;
+    height: 2.5rem;
+  }
+
+  .iconic p {
+    font-size: 1.6rem;
+    color: #2e028d;
+  }
+  .icon {
+    font-size: 2rem;
+    color: #2e028d;
+  }
 }
 
 .memory-game {
-  width: 720px;
-  height: 540px;
+  width: 100%;
+  height: 85%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  justify-content: center;
+  gap: 15px;
   perspective: 1000px;
 }
 .card-game {
-  width: 90px;
-  height: 120px;
+  width: 70px;
+  height: 90px;
   border: 1px white solid;
   border-radius: 6px;
   transition: 0.5s;
@@ -100,6 +121,28 @@ body,
 
 .flip {
   transform: rotateY(180deg);
+}
+@media screen and (min-width: 650px) {
+  .memory-game {
+    width: 720px;
+    height: 540px;
+    gap: 30px;
+    perspective: 1000px;
+  }
+  .card-game {
+    width: 90px;
+    height: 120px;
+    border: 1px white solid;
+    border-radius: 6px;
+  }
+
+  .card {
+    backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: 10px 5px 5px black;
+  }
 }
 
 /* .card-won {
