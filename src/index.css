@@ -9,13 +9,8 @@ body {
 
 body,
 #root {
-  height: 100%;
-  width: 100%;
-  height: 100vh;
-  /* display: flex; */
-  /* justify-content: center;
-  align-items: center; */
-  background-color: #2e028d;
+  font-size: 0.875rem;
+  overflow: hidden;
 }
 
 * {
@@ -24,35 +19,47 @@ body,
   box-sizing: border-box;
 }
 
+.gameboard {
+  height: auto;
+  width: 100vw;
+  background-color: #2e028d;
+  /* border: red solid 8px; */
+}
+
 .banner {
   display: flex;
   justify-content: center;
   /* align-items: center; */
-  height: 20%;
+  height: 19%;
   width: 100vw;
   padding: 1rem;
 }
 .iconic {
-  /* padding: 1rem; */
   margin: 1rem;
-  width: 10rem;
-  height: 1.5rem;
-  color: red;
-  background-color: none;
+  padding: 2px 5px 4px;
+  width: 8rem;
+  height: 2.5rem;
+  background-color: #f8eaaf;
+  border: 3px solid #c46404;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.iconic p {
+  font-size: 1.6rem;
+  color: #2e028d;
 }
 .icon {
-  /* padding: 1rem;
-  margin: 1rem;
-  width: 10rem;
-  height: 1.5rem; */
-  color: white;
   background-color: none;
   font-size: 2rem;
+  color: #2e028d;
+}
+@media screen and (min-width: 768px) {
 }
 
 .memory-game {
   width: 720px;
-  height: 580px;
+  height: 540px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -80,7 +87,7 @@ body,
   position: absolute;
   width: 100%;
   height: 100%;
-
+  box-shadow: 10px 5px 5px black;
   &.back-face {
     transform: rotateY(180deg);
   }
@@ -95,6 +102,6 @@ body,
   transform: rotateY(180deg);
 }
 
-.card-won {
+/* .card-won {
   visibility: hidden;
-}
+} */

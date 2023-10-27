@@ -66,27 +66,29 @@ function App() {
   };
   return (
     <div className='App'>
-      <div className='banner'>
-        <button className='iconic' onClick={() => setPlaying(!playing)}>
-          {!playing ? (
-            <BiPlayCircle className='icon' />
-          ) : (
-            <BiPauseCircle className='icon' />
-          )}
-        </button>
+      <div className='gameboard'>
+        <div className='banner'>
+          <button className='iconic' onClick={() => setPlaying(!playing)}>
+            {!playing ? (
+              <BiPlayCircle className='icon' />
+            ) : (
+              <BiPauseCircle className='icon' />
+            )}
+          </button>
 
-        <button className='iconic' onClick={() => reset()}>
-          Reset
-        </button>
+          <button className='iconic' onClick={() => reset()}>
+            <p>Reset</p>
+          </button>
+        </div>
+        <Memory
+          card={card}
+          currcards={currcards}
+          setCurrcards={setCurrcards}
+          timeout={timeout}
+          check={check}
+          cardWin={cardWin}
+        />
       </div>
-      <Memory
-        card={card}
-        currcards={currcards}
-        setCurrcards={setCurrcards}
-        timeout={timeout}
-        check={check}
-        cardWin={cardWin}
-      />
     </div>
   );
 }
