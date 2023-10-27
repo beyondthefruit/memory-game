@@ -2,9 +2,8 @@ import { useEffect, useState } from 'react';
 import Select from '../memoryselect(mp3cut.net).mp3';
 const Memory = ({
   card,
-  cards,
-  flip,
-  setFlip,
+  // flip,
+  // setFlip,
   setCurrcards,
   currcards,
   timeout,

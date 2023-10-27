@@ -29,9 +29,26 @@ body {
   box-sizing: border-box;
 }
 
+.banner {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  height: 20%;
+  width: 100vw;
+  padding: 1rem;
+}
+.icon {
+  padding: 1rem;
+  margin: 1rem;
+  width: 10rem;
+  height: 1.5rem;
+  color: black;
+  background-color: none;
+}
+
 .memory-game {
   width: 720px;
-  height: 640px;
+  height: 580px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;

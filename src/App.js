@@ -1,11 +1,12 @@
 import { useState, useRef } from 'react';
-// import Song from './memorysong(mp3cut.net).mp3';
+import Song from './memorysong(mp3cut.net).mp3';
 import Win from './memorywin(mp3cut.net).mp3';
 // import Select from './memoryselect(mp3cut.net).mp3';
 
 import cards from './data';
 import './index.css';
 import Memory from './components/memory';
+import { BiPlayCircle } from 'react-icons/bi';
 
 function App() {
   const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
@@ -13,9 +14,11 @@ function App() {
   const [card, setCard] = useState(shuffleCards);
   const [currcards, setCurrcards] = useState([]);
   const [cardWin, setCardWin] = useState([]);
+
   // const [cardo, setCardo] = useState(cards);
-  let [score, setScore] = useState(0);
-  const [flip, setFlip] = useState(false);
+  const [music, setMusic] = useState(false);
+
+  // const [flip, setFlip] = useState(false);
   const timeout = useRef(null);
 
   console.log(shuffleCards);
@@ -25,9 +28,10 @@ function App() {
     score += 1;
   };
 
-  // let SelectSong = new Audio(Select);
   let WinSong = new Audio(Win);
 
+  let AudioPlay = new Audio(Song);
+  AudioPlay.loop = true;
   const check = () => {
     console.log(card);
     const card1 = cards[currcards[0] - 1];
@@ -41,36 +45,35 @@ function App() {
       WinSong.play();
       // console.log('@@@@@@@@@@@@@@@@@@@@', cardWin);
       setCurrcards([]);
-      setScore((score) => score + 1);
-      getScore();
+      // setScore((score) => score + 1);
+      // getScore();
       return;
     } else {
       setCurrcards([]);
       return;
     }
   };
-  // let AudioPlay = new Audio(Song);
-  // AudioPlay.play();
+  const reset = () => {
+    setCurrcards([]);
+    setCardWin([]);
+    setCard(shuffle(cards));
+  };
   return (
     <div className='App'>
       <div className='banner'>
-        <div className='score'>Score</div>
-        <div className='score'>{score}</div>
-        {/* <button onClick={AudioPlay.play()}></button> */}
-        <audio src='./memorysong(mp3cut.net).mp3' id='audio' loop autoPlay>
-          {/* <source
-            src='%PUBLIC_URL%/memorysong(mp3cut.net).mp3'
-            type='audio/mpeg'
-          ></source> */}
-        </audio>
+        <button className='icon' onClick={() => AudioPlay.play()}>
+          <BiPlayCircle />
+        </button>
+        <button className='icon' onClick={() => reset()}>
+          Reset
+        </button>
       </div>
       <Memory
         card={card}
         currcards={currcards}
         setCurrcards={setCurrcards}
-        cards={cards}
-        flip={flip}
-        setFlip={setFlip}
+        // flip={flip}
+        // setFlip={setFlip}
         timeout={timeout}
         check={check}
         cardWin={cardWin}
