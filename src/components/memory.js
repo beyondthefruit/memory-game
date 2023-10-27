@@ -1,6 +1,14 @@
 import { useEffect } from 'react';
 import Select from '../memoryselect(mp3cut.net).mp3';
-const Memory = ({ card, setCurrcards, currcards, timeout, check, cardWin }) => {
+const Memory = ({
+  card,
+  setCurrcards,
+  currcards,
+  timeout,
+  check,
+  cardWin,
+  gameWin,
+}) => {
   // const [save, setSave] = useState(null);
   // console.log('this is curr', currcards);
   // console.log('cur 1 name', currcards[0]);

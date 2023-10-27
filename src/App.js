@@ -15,7 +15,7 @@ function App() {
   // mgt audio, I was using a var Audio = new Audio but every time I was clicking it started a new audio so fixed it by replacing by useState
   const [playing, setPlaying] = useState(false);
   const [audio] = useState(new Audio(Song));
-
+  const [gameWin, setGameWin] = useState(false);
   const timeout = useRef(null);
 
   // console.log(shuffleCards);
@@ -35,9 +35,12 @@ function App() {
     playing ? audio.play() : audio.pause();
   }, [playing]);
 
+  // useEffect(()=> {
+  //   gameWin ?
+  // })
   // check if 2 cards matchs
   const check = () => {
-    console.log(card);
+    // console.log(card);
     const card1 = cards[currcards[0] - 1];
     const card2 = cards[currcards[1] - 1];
     // console.log('this is card1', card1.name, card1);
@@ -58,15 +61,25 @@ function App() {
     }
   };
 
+  const victory = () => {
+    if (cardWin.length === cards.length) {
+      console.log('you are the bets');
+      setGameWin(true);
+    }
+  };
+  useEffect(() => {
+    victory();
+  }, [cardWin]);
   //to start over
   const reset = () => {
     setCurrcards([]);
     setCardWin([]);
     setCard(shuffle(cards));
+    setGameWin(false);
   };
   return (
     <div className='App'>
-      <div className='gameboard'>
+      <div className={`gameboard ${gameWin ? 'gamewon' : ''}`}>
         <div className='banner'>
           <button className='iconic' onClick={() => setPlaying(!playing)}>
             {!playing ? (

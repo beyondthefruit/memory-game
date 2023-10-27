@@ -10,8 +10,14 @@ body {
 body,
 #root {
   font-size: 0.875rem;
-  overflow: hidden;
+  /* overflow: hidden; */
   background-color: #2e028d;
+  --d: 2500ms;
+  --angle: 90deg;
+  --gradX: 100%;
+  --gradY: 50%;
+  --c1: #707ea8;
+  --c2: #b03249;
 }
 
 * {
@@ -19,12 +25,28 @@ body,
   margin: 0;
   box-sizing: border-box;
 }
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: '<percentage>';
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: true;
+}
 
 .gameboard {
   height: 100vh;
   width: 100vw;
-
-  /* border: red solid 8px; */
+  border: solid 7px #f8eaaf;
 }
 
 .banner {
@@ -55,10 +77,14 @@ body,
   color: #2e028d;
 }
 @media screen and (min-width: 650px) {
+  .gameboard {
+    border: solid 10px #f8eaaf;
+  }
+
   .banner {
-    height: 19%;
+    height: 16%;
     width: 100vw;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
   }
   .iconic {
     margin: 1rem;
@@ -124,14 +150,14 @@ body,
 }
 @media screen and (min-width: 650px) {
   .memory-game {
-    width: 720px;
-    height: 540px;
-    gap: 30px;
+    width: 650px;
+    height: 500px;
+    gap: 25px;
     perspective: 1000px;
   }
   .card-game {
-    width: 90px;
-    height: 120px;
+    width: 82px;
+    height: 110px;
     border: 1px white solid;
     border-radius: 6px;
   }
@@ -144,7 +170,89 @@ body,
     box-shadow: 10px 5px 5px black;
   }
 }
+@media screen and (min-width: 960px) {
+  .memory-game {
+    width: 720px;
+    height: 500px;
+    gap: 25px;
+    perspective: 1000px;
+  }
+  .card-game {
+    width: 90px;
+    height: 120px;
+    border: 1px white solid;
+    border-radius: 6px;
+  }
+}
 
+.gamewon {
+  border: 10px solid;
+  border-image: conic-gradient(
+      from var(--angle),
+      var(--c2),
+      var(--c1) 0.1turn,
+      var(--c1) 0.15turn,
+      var(--c2) 0.25turn
+    )
+    30;
+  animation: borderRotate var(--d) linear infinite forwards;
+}
+
+@keyframes borderRotate {
+  100% {
+    --angle: 420deg;
+  }
+}
+
+@keyframes borderRadial {
+  20% {
+    --gradX: 100%;
+    --gradY: 50%;
+  }
+  40% {
+    --gradX: 100%;
+    --gradY: 100%;
+  }
+  60% {
+    --gradX: 50%;
+    --gradY: 100%;
+  }
+  80% {
+    --gradX: 0%;
+    --gradY: 50%;
+  }
+  100% {
+    --gradX: 50%;
+    --gradY: 0%;
+  }
+}
+/* .gamewon {
+  border: 8px solid;
+  border-image: repeating-linear-gradient(
+      135deg,
+      #f8ca00 0 10px,
+      #e97f02 0 20px,
+      #bd1550 0 30px
+    )
+    8;
+  --_i: 100%;
+  mask: conic-gradient(from 180deg at top 8px right 8px, #0000 90deg, #000 0)
+      var(--_i, 200%) 0 /200% var(--_i, 8px) border-box repeat,
+    conic-gradient(at bottom 8px left 8px, #0000 90deg, #000 0) 0
+      var(--_i, 200%) / var(--_i, 8px) 200% border-box repeat,
+    linear-gradient(#000 0 0) padding-box repeat;
+  transition: 0.3s, -webkit-mask-position 0.3s 0.3s;
+  -webkit-mask: conic-gradient(
+        from 180deg at top 8px right 8px,
+        #0000 90deg,
+        #000 0
+      )
+      var(--_i, 200%) 0 /200% var(--_i, 8px) border-box repeat,
+    conic-gradient(at bottom 8px left 8px, #0000 90deg, #000 0) 0
+      var(--_i, 200%) / var(--_i, 8px) 200% border-box repeat,
+    linear-gradient(#000 0 0) padding-box repeat;
+  transition: 0.3s, -webkit-mask-position 0.3s 0.3s;
+} */
 /* .card-won {
   visibility: hidden;
 } */
