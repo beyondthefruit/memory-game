@@ -10,7 +10,7 @@ body {
 body,
 #root {
   font-size: 0.875rem;
-  /* overflow: hidden; */
+  overflow: hidden;
   background-color: #2e028d;
   --d: 2500ms;
   --angle: 90deg;
@@ -42,7 +42,11 @@ body,
   initial-value: 0%;
   inherits: true;
 }
-
+.confetto {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+}
 .gameboard {
   height: 100vh;
   width: 100vw;
@@ -226,33 +230,3 @@ body,
     --gradY: 0%;
   }
 }
-/* .gamewon {
-  border: 8px solid;
-  border-image: repeating-linear-gradient(
-      135deg,
-      #f8ca00 0 10px,
-      #e97f02 0 20px,
-      #bd1550 0 30px
-    )
-    8;
-  --_i: 100%;
-  mask: conic-gradient(from 180deg at top 8px right 8px, #0000 90deg, #000 0)
-      var(--_i, 200%) 0 /200% var(--_i, 8px) border-box repeat,
-    conic-gradient(at bottom 8px left 8px, #0000 90deg, #000 0) 0
-      var(--_i, 200%) / var(--_i, 8px) 200% border-box repeat,
-    linear-gradient(#000 0 0) padding-box repeat;
-  transition: 0.3s, -webkit-mask-position 0.3s 0.3s;
-  -webkit-mask: conic-gradient(
-        from 180deg at top 8px right 8px,
-        #0000 90deg,
-        #000 0
-      )
-      var(--_i, 200%) 0 /200% var(--_i, 8px) border-box repeat,
-    conic-gradient(at bottom 8px left 8px, #0000 90deg, #000 0) 0
-      var(--_i, 200%) / var(--_i, 8px) 200% border-box repeat,
-    linear-gradient(#000 0 0) padding-box repeat;
-  transition: 0.3s, -webkit-mask-position 0.3s 0.3s;
-} */
-/* .card-won {
-  visibility: hidden;
-} */
