@@ -1,6 +1,6 @@
 # Memory Game Mario All stars React App
 
-## 🧶 The Project
+## 🎮 The Project
 
 ➡️ ➡️ [GO TO WEBSITE PROJECT]() ⬅️ ⬅️
 
