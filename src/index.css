@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Roboto&family=Space+Mono&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'DotGothic16', sans-serif, 'Roboto', sans-serif, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -34,8 +36,8 @@ body,
 .gameboard {
   height: 100vh;
   width: 100vw;
-  /* border: solid 7px #f8eaaf; */
-  border: solid 7px #ff0000;
+  border: solid 7px #f8eaaf;
+  /* border: solid 7px #ff0000; */
 }
 
 .banner {
@@ -44,12 +46,13 @@ body,
   height: 12%;
   width: 100vw;
   padding: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 .iconic {
   margin: 1rem;
   padding: 2px 5px 4px;
   width: 6rem;
-  height: 2.2rem;
+  height: 2.3rem;
   background-color: #f8eaaf;
   border: 3px solid #c46404;
   /* border: 3px solid #ff0000; */
@@ -57,9 +60,13 @@ body,
   border-radius: 2px;
   box-shadow: 5px 3px 2px black;
 }
+.iconic:last-child {
+  padding: 0px 4px 6px;
+}
 
 .iconic p {
   font-size: 1.4rem;
+  font-family: 'DotGothic16', sans-serif;
   color: #2e028d;
 }
 .icon {
@@ -81,11 +88,13 @@ body,
     margin: 1rem;
     padding: 2px 5px 4px;
     width: 8rem;
-    height: 2.5rem;
+    height: 2.7rem;
+    letter-spacing: 1px;
   }
 
   .iconic p {
     font-size: 1.6rem;
+    font-weight: 600;
     color: #2e028d;
   }
   .icon {
@@ -97,6 +106,66 @@ body,
   .banner {
     height: 18%;
     padding: 1rem 1rem;
+  }
+}
+
+.toad {
+  height: 120px;
+  width: 120px;
+  position: absolute;
+  left: -150px;
+  top: 280px;
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 0.2s linear;
+  z-index: 10;
+}
+
+.toad-victory {
+  transform: translate(120px) rotate(0.1turn);
+}
+
+.vicmsg {
+  height: 40px;
+  width: 150px;
+  position: absolute;
+  color: #f8eaaf;
+  font-size: 2rem;
+  font-weight: 500;
+  left: -180px;
+  top: 230px;
+  transform: translateX(0);
+  background-color: #2e028d;
+  border-radius: 20%;
+  opacity: 1;
+  z-index: 10;
+}
+
+@media screen and (min-width: 650px) {
+  .toad {
+    height: 150px;
+    width: 150px;
+    transition: all 0.2s linear;
+  }
+
+  .toad-victory {
+    transform: translate(110px) rotate(0.1turn);
+  }
+  .vicmsg {
+    transition: all 0.2s linear;
+  }
+  .vicmsg-transition {
+    transform: translate(200px);
+  }
+}
+@media screen and (min-width: 960px) {
+  .vicmsg-transition {
+    transform: translate(240px);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .vicmsg {
+    background-color: transparent;
   }
 }
 

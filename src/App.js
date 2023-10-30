@@ -7,6 +7,9 @@ import Memory from './components/memory';
 import { BiPlayCircle, BiPauseCircle } from 'react-icons/bi';
 import ConfettiExplosion from 'react-confetti-explosion';
 
+//og image
+// logo
+//read me
 function App() {
   const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
   const shuffleCards = shuffle(cards);
@@ -90,9 +93,16 @@ function App() {
             )}
           </button>
           <button className='iconic' onClick={() => reset()}>
-            <p>Reset</p>
+            <p>RESET</p>
           </button>
         </div>
+        <div className={`vicmsg ${playing ? 'vicmsg-transition' : ''}`}>
+          Well Done
+        </div>
+        <img
+          className={`toad ${playing ? 'toad-victory' : ''}`}
+          src={require(`./imgs/toad.png`)}
+        ></img>
         <Memory
           card={card}
           currcards={currcards}
