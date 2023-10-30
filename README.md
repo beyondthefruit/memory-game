@@ -40,18 +40,16 @@ This game is best enjoyed on a laptop or monitor.
 - [x] Tested manually using developer tools - Firefox / Chrome
 - [x] Media query tests: Ipad - IphoneSE/Pro/PRO MAX/MINI - Galaxy Note 20/520
 
-## 📈 Performance
-
-Todo
+## 📈 Performance https://www.webpagetest.org/result/231030_BiDc6V_4Z1/
 
 - For a full performance report
-- First Byte:
-- Start Render:
-- Speed Index:
-- LCP:
+- First Byte: 0.494s
+- Start Render: 1.100s
+- Speed Index: 1.160s
+- LCP: 1.444s
 - CLS: 0
 - TBT: 0.000s
-- Total Bytes:
+- Total Bytes: 566kb
 
 ## 📱 Media Queries
 
