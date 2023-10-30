@@ -93,7 +93,7 @@ body,
     color: #2e028d;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   .banner {
     height: 18%;
     padding: 1rem 1rem;
@@ -181,7 +181,7 @@ body,
     border-radius: 6px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
   .memory-game {
     width: 860px;
     height: 650px;
