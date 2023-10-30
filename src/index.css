@@ -25,23 +25,7 @@ body,
   margin: 0;
   box-sizing: border-box;
 }
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 90deg;
-  inherits: true;
-}
 
-@property --gradX {
-  syntax: '<percentage>';
-  initial-value: 50%;
-  inherits: true;
-}
-
-@property --gradY {
-  syntax: '<percentage>';
-  initial-value: 0%;
-  inherits: true;
-}
 .confetto {
   position: absolute;
   left: 50%;
@@ -50,7 +34,8 @@ body,
 .gameboard {
   height: 100vh;
   width: 100vw;
-  border: solid 7px #f8eaaf;
+  /* border: solid 7px #f8eaaf; */
+  border: solid 7px #ff0000;
 }
 
 .banner {
@@ -67,8 +52,10 @@ body,
   height: 2.2rem;
   background-color: #f8eaaf;
   border: 3px solid #c46404;
+  /* border: 3px solid #ff0000; */
   cursor: pointer;
   border-radius: 2px;
+  box-shadow: 5px 3px 2px black;
 }
 
 .iconic p {
@@ -104,6 +91,12 @@ body,
   .icon {
     font-size: 2rem;
     color: #2e028d;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .banner {
+    height: 18%;
+    padding: 1rem 1rem;
   }
 }
 
@@ -188,7 +181,32 @@ body,
     border-radius: 6px;
   }
 }
+@media screen and (min-width: 1200px) {
+  .memory-game {
+    width: 860px;
+    height: 650px;
+    gap: 40px;
+  }
+}
 
+/* border animation */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: '<percentage>';
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: '<percentage>';
+  initial-value: 0%;
+  inherits: true;
+}
 .gamewon {
   border: 10px solid;
   border-image: conic-gradient(
@@ -200,6 +218,7 @@ body,
     )
     30;
   animation: borderRotate var(--d) linear infinite forwards;
+  transition: 0.2s;
 }
 
 @keyframes borderRotate {
