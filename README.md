@@ -1,3 +1,70 @@
+# Memory Game Mario All stars React App
+
+## 🧶 The Project
+
+➡️ ➡️ [GO TO WEBSITE PROJECT]() ⬅️ ⬅️
+
+Any of you remember this mini game from Mario 3 All stars : https://www.youtube.com/watch?v=BAhICqmT8Do
+I wanted to create a game, and thought why not a memory game like the one in Mario ALl Stars, which by the way I couldn't win anything.
+This game is best enjoyed on a laptop or monitor.
+
+### 👟 Steps
+
+- Started by finding the image
+- Created a Notion page for a future blog post on the project
+- Created the app
+- Drafted the overall design of the website using mock data
+- Mapped through data to display the different card
+- Choose a flip card method and developed the main function of the website
+- Created a function to display randomly the cards
+- Installed a confetti animation from a library
+- Created a victory animation
+
+🍐 [@beyondthefruit (Kevin Hanard)](https://github.com/beyondthefruit)
+
+**Demo:**
+
+🚀 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+🧚🏻 Tech stack:
+
+- ReactJS
+- JavaScript
+- HTML
+- CSS
+- SVG Animation
+
+## 🪄 Testing
+
+- [] Unit tests with [Testing Library](https://testing-library.com/)
+- [x] Tested manually using developer tools - Firefox / Chrome
+- [x] Media query tests: Ipad - IphoneSE/Pro/PRO MAX/MINI - Galaxy Note 20/520
+
+## 📈 Performance
+
+Todo
+
+- For a full performance report
+- First Byte:
+- Start Render:
+- Speed Index:
+- LCP:
+- CLS: 0
+- TBT: 0.000s
+- Total Bytes:
+
+## 📱 Media Queries
+
+- mobileS:`@media screen and (min-width: 320px)`
+- mobileL:`@media screen and (min-width: 650px)`
+- laptop: `@media screen and (min-width: 960px)`
+- laptopL: `@media screen and (min-width: 1200px)`
+- desktop: `@media screen and (min-width: 1400px)`
+
+## 🌵 Challenges
+
+- Images quality are super low
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
