@@ -183,7 +183,7 @@ body,
   background-color: transparent;
   width: 62px;
   height: 75px;
-  border: 1px white solid;
+
   border-radius: 6px;
   transition: 0.5s;
   transform-style: preserve-3d;
@@ -202,27 +202,48 @@ body,
   position: absolute;
   width: 100%;
   height: 100%;
-  box-shadow: 10px 5px 5px black;
+  border: 1px white solid;
   :hover {
     outline: 10px ridge red;
     outline-offset: 6px;
     border-radius: 2px;
   }
 }
+.inner {
+  transform-style: preserve-3d;
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  /* box-shadow: 10px 5px 5px black; */
+}
+
+.shadow-front {
+  box-shadow: -10px -5px -5px;
+  /* box-shadow: none; */
+}
+.shadow-back {
+  box-shadow: 10px 5px 5px black;
+}
+.front-face {
+}
 
 .flip {
   transform: rotateY(180deg);
+  /* box-shadow: -10px 5px 5px black; */
+  /* box-shadow: 0px 5px 5px black; */
 }
 
 .back-face {
   background-color: transparent;
   transform: rotateY(180deg);
+  /* box-shadow: -10px 5px 5px black; */
 }
 @media screen and (min-width: 650px) {
   .memory-game {
     width: 630px;
     height: 500px;
-    gap: 20px;
+    gap: 22px;
     perspective: 1000px;
   }
   .card-game {
@@ -237,7 +258,8 @@ body,
     position: absolute;
     width: 100%;
     height: 100%;
-    box-shadow: 10px 5px 5px black;
+  }
+  .front-face {
   }
 }
 @media screen and (min-width: 960px) {
@@ -280,8 +302,9 @@ body,
   initial-value: 0%;
   inherits: true;
 }
+
 .gamewon {
-  border: 10px solid;
+  border: 7px solid;
   border-image: conic-gradient(
       from var(--angle),
       var(--c2),
@@ -292,6 +315,11 @@ body,
     30;
   animation: borderRotate var(--d) linear infinite forwards;
   transition: 0.2s;
+}
+@media screen and (min-width: 650px) {
+  .gamewon {
+    border: 10px solid;
+  }
 }
 
 @keyframes borderRotate {
