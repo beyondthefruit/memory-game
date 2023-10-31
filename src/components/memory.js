@@ -53,11 +53,10 @@ const Memory = ({ card, setCurrcards, currcards, timeout, check, cardWin }) => {
             <div className='inner'>
               <div
                 className={`card front-face ${
-                  checkIsFlipped(id) ? 'shadow-front' : 'shadow-back'
+                  checkIsFlipped(id) ? 'shadow-front' : 'no-shadow'
                 }
             `}
               >
-                {/* <div className='card front-face'> */}
                 <img src={require('../imgs/front.png')} alt='front' />
               </div>
               <div className='card back-face'>

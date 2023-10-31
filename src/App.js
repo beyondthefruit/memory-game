@@ -50,9 +50,10 @@ function App() {
 
   const victory = () => {
     if (cardWin.length === cards.length) {
-      // console.log('you are the best');
-      setGameWin(true);
       setIsExploding(true);
+      setTimeout(() => {
+        setGameWin(true);
+      }, 200);
     }
   };
   useEffect(() => {
@@ -61,8 +62,8 @@ function App() {
 
   const confettiProps = {
     duration: 2500,
-    particleCount: 200,
-    width: 1200,
+    particleCount: 60,
+    width: 1000,
     colors: ['#c46404', '#f8eaaf', '#2e028d', '#b03249'],
   };
 
@@ -72,7 +73,6 @@ function App() {
     setCardWin([]);
     setCard(shuffle(cards));
     setGameWin(false);
-
     setIsExploding(false);
   };
   return (

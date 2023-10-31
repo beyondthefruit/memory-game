@@ -37,7 +37,6 @@ body,
   height: 100vh;
   width: 100vw;
   border: solid 7px #f8eaaf;
-  /* border: solid 7px #ff0000; */
 }
 
 .banner {
@@ -55,7 +54,6 @@ body,
   height: 2.3rem;
   background-color: #f8eaaf;
   border: 3px solid #c46404;
-  /* border: 3px solid #ff0000; */
   cursor: pointer;
   border-radius: 2px;
   box-shadow: 5px 3px 2px black;
@@ -70,7 +68,7 @@ body,
   color: #2e028d;
 }
 .icon {
-  background-color: none;
+  /* background-color: none; */
   font-size: 1.6rem;
   color: #2e028d;
 }
@@ -145,14 +143,13 @@ body,
   .toad {
     height: 150px;
     width: 150px;
-    transition: all 0.3s linear;
   }
 
   .toad-victory {
     transform: translate(110px) rotate(0.1turn);
   }
   .vicmsg {
-    transition: all 0.3s linear;
+    transition: all 0.5s linear;
   }
   .vicmsg-transition {
     transform: translate(200px);
@@ -183,7 +180,6 @@ body,
   background-color: transparent;
   width: 62px;
   height: 75px;
-
   border-radius: 6px;
   transition: 0.5s;
   transform-style: preserve-3d;
@@ -215,29 +211,23 @@ body,
   cursor: pointer;
   width: 100%;
   height: 100%;
-  /* box-shadow: 10px 5px 5px black; */
 }
 
 .shadow-front {
-  box-shadow: -10px -5px -5px;
-  /* box-shadow: none; */
+  box-shadow: -5px -3px -3px;
 }
-.shadow-back {
-  box-shadow: 10px 5px 5px black;
-}
-.front-face {
+.no-shadow {
+  box-shadow: 5px 3px 3px black;
 }
 
 .flip {
   transform: rotateY(180deg);
-  /* box-shadow: -10px 5px 5px black; */
-  /* box-shadow: 0px 5px 5px black; */
 }
 
 .back-face {
   background-color: transparent;
   transform: rotateY(180deg);
-  /* box-shadow: -10px 5px 5px black; */
+  box-shadow: 5px 3px 3px black;
 }
 @media screen and (min-width: 650px) {
   .memory-game {
@@ -259,7 +249,14 @@ body,
     width: 100%;
     height: 100%;
   }
-  .front-face {
+  .shadow-front {
+    box-shadow: -10px -5px -5px;
+  }
+  .no-shadow {
+    box-shadow: 10px 5px 5px black;
+  }
+  .back-face {
+    box-shadow: 10px 5px 5px black;
   }
 }
 @media screen and (min-width: 960px) {
@@ -314,12 +311,7 @@ body,
     )
     30;
   animation: borderRotate var(--d) linear infinite forwards;
-  transition: 0.2s;
-}
-@media screen and (min-width: 650px) {
-  .gamewon {
-    border: 10px solid;
-  }
+  transition: 0.3s;
 }
 
 @keyframes borderRotate {
