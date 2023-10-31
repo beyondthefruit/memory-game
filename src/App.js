@@ -12,6 +12,7 @@ function App() {
   const shuffleCards = shuffle(cards);
   const [card, setCard] = useState(shuffleCards);
   const [currcards, setCurrcards] = useState([]);
+  console.log(currcards);
   const [cardWin, setCardWin] = useState([]);
   // mgt audio, I was using a var Audio = new Audio but every time I was clicking it started a new audio so fixed it by replacing by useState
   const [playing, setPlaying] = useState(false);
@@ -33,13 +34,12 @@ function App() {
   const check = () => {
     const card1 = cards[currcards[0] - 1];
     const card2 = cards[currcards[1] - 1];
-    // console.log('this is card1', card1.name, card1);
-    if (card1.name === card2.name) {
-      let card1id = card1.id;
-      let card2id = card2.id;
-      setCardWin((prev) => [...prev, card1id, card2id]);
+    if (card1.name == card2.name) {
+      // let card1id = card1.id;
+      // let card2id = card2.id;
+      setCardWin((prev) => [...prev, card1.id, card2.id]);
       WinSong.play();
-      // console.log('@@@@@@@@@@@@@@@@@@@@', cardWin);
+      console.log('@@@@@@@@@@@@@@@@@@@@', cardWin);
       setCurrcards([]);
       return;
     } else {
@@ -47,6 +47,10 @@ function App() {
       return;
     }
   };
+
+  // useEffect(() => {
+  //   check();
+  // }, [currcards]);
 
   const victory = () => {
     if (cardWin.length === cards.length) {

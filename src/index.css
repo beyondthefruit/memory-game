@@ -181,7 +181,7 @@ body,
   width: 62px;
   height: 75px;
   border-radius: 6px;
-  transition: 0.5s;
+  transition: 0.4s;
   transform-style: preserve-3d;
   position: relative;
   cursor: pointer;

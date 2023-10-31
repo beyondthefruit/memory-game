@@ -16,7 +16,7 @@ const Memory = ({ card, setCurrcards, currcards, timeout, check, cardWin }) => {
     let timeout = null;
     // console.log(currcards.length);
     if (currcards.length === 2) {
-      timeout = setTimeout(check, 900);
+      timeout = setTimeout(check, 450);
     }
     return () => {
       clearTimeout(timeout);
@@ -48,12 +48,13 @@ const Memory = ({ card, setCurrcards, currcards, timeout, check, cardWin }) => {
             onClick={() => {
               handleClick(id);
               SelectSong.play();
+              console.log(id);
             }}
           >
             <div className='inner'>
               <div
                 className={`card front-face ${
-                  checkIsFlipped(id) ? 'shadow-front' : 'no-shadow'
+                  !checkIsFlipped(id) ? 'no-shadow' : 'shadow-front'
                 }
             `}
               >
