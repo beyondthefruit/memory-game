@@ -212,9 +212,9 @@ body,
   width: 100%;
   height: 100%;
   box-shadow: 10px 5px 5px black;
-  &.back-face {
+  /* &.back-face {
     transform: rotateY(180deg);
-  }
+  } */
   :hover {
     outline: 10px ridge red;
     outline-offset: 6px;
@@ -228,6 +228,7 @@ body,
 
 .back-face {
   background-color: transparent;
+  transform: rotateY(180deg);
 }
 @media screen and (min-width: 650px) {
   .memory-game {
