@@ -178,7 +178,6 @@ body,
   justify-content: center;
   gap: 14px;
   perspective: 1000px;
-  z-index: 5;
 }
 .card-game {
   background-color: transparent;
@@ -190,14 +189,6 @@ body,
   transform-style: preserve-3d;
   position: relative;
   cursor: pointer;
-  /* perspective: 1000px; */
-}
-.inner {
-  transform-style: preserve-3d;
-  position: relative;
-  cursor: pointer;
-  width: 100%;
-  height: 100%;
 }
 
 .card-game img {
@@ -212,9 +203,6 @@ body,
   width: 100%;
   height: 100%;
   box-shadow: 10px 5px 5px black;
-  /* &.back-face {
-    transform: rotateY(180deg);
-  } */
   :hover {
     outline: 10px ridge red;
     outline-offset: 6px;
@@ -232,9 +220,9 @@ body,
 }
 @media screen and (min-width: 650px) {
   .memory-game {
-    width: 650px;
+    width: 630px;
     height: 500px;
-    gap: 25px;
+    gap: 20px;
     perspective: 1000px;
   }
   .card-game {
