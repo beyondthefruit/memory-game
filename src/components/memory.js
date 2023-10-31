@@ -50,11 +50,13 @@ const Memory = ({ card, setCurrcards, currcards, timeout, check, cardWin }) => {
               SelectSong.play();
             }}
           >
-            <div className='card font-face'>
-              <img src={require('../imgs/front.png')} alt='front' />
-            </div>
-            <div className='card back-face'>
-              <img src={img} alt={name}></img>
+            <div className='inner'>
+              <div className='card font-face'>
+                <img src={require('../imgs/front.png')} alt='front' />
+              </div>
+              <div className='card back-face'>
+                <img src={img} alt={name}></img>
+              </div>
             </div>
           </div>
         );

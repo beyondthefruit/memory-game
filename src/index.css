@@ -43,7 +43,7 @@ body,
 .banner {
   display: flex;
   justify-content: center;
-  height: 12%;
+  height: 11%;
   width: 100vw;
   padding: 0.5rem;
   margin-bottom: 0.4rem;
@@ -117,7 +117,7 @@ body,
   top: 280px;
   transform: translateX(0);
   opacity: 1;
-  transition: all 0.2s linear;
+  transition: all 0.3s linear;
   z-index: 10;
 }
 
@@ -145,14 +145,14 @@ body,
   .toad {
     height: 150px;
     width: 150px;
-    transition: all 0.2s linear;
+    transition: all 0.3s linear;
   }
 
   .toad-victory {
     transform: translate(110px) rotate(0.1turn);
   }
   .vicmsg {
-    transition: all 0.2s linear;
+    transition: all 0.3s linear;
   }
   .vicmsg-transition {
     transform: translate(200px);
@@ -171,23 +171,33 @@ body,
 
 .memory-game {
   width: 100%;
-  height: 85%;
+  height: 450px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+  gap: 14px;
   perspective: 1000px;
+  z-index: 5;
 }
 .card-game {
-  width: 70px;
-  height: 90px;
+  background-color: transparent;
+  width: 62px;
+  height: 75px;
   border: 1px white solid;
   border-radius: 6px;
   transition: 0.5s;
   transform-style: preserve-3d;
   position: relative;
   cursor: pointer;
+  /* perspective: 1000px; */
+}
+.inner {
+  transform-style: preserve-3d;
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
 }
 
 .card-game img {
@@ -197,6 +207,7 @@ body,
 
 .card {
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -213,6 +224,10 @@ body,
 
 .flip {
   transform: rotateY(180deg);
+}
+
+.back-face {
+  background-color: transparent;
 }
 @media screen and (min-width: 650px) {
   .memory-game {

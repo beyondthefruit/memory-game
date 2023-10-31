@@ -80,7 +80,7 @@ function App() {
       <div className='confetto'>
         {isExploding && <ConfettiExplosion {...confettiProps} />}
       </div>
-      <div className={`gameboard ${gameWin ? 'gamewon' : ''}`}>
+      <div className={`gameboard ${playing ? 'gamewon' : ''}`}>
         <div className='banner'>
           <button className='iconic' onClick={() => setPlaying(!playing)}>
             {!playing ? (
@@ -93,12 +93,12 @@ function App() {
             <p>RESET</p>
           </button>
         </div>
-        <div className={`vicmsg ${gameWin ? 'vicmsg-transition' : ''}`}>
+        <div className={`vicmsg ${playing ? 'vicmsg-transition' : ''}`}>
           Well Done
         </div>
         <img
-          className={`toad ${gameWin ? 'toad-victory' : ''}`}
-          src={require(`./imgs/toad.png`)}
+          className={`toad ${playing ? 'toad-victory' : ''}`}
+          src={require(`./imgs/toad-32b.png`)}
         ></img>
         <Memory
           card={card}
