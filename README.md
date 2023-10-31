@@ -5,15 +5,16 @@
 ➡️ ➡️ [GO TO WEBSITE PROJECT]() ⬅️ ⬅️
 
 Any of you remember this mini game from Mario 3 All stars : https://www.youtube.com/watch?v=BAhICqmT8Do
-I wanted to create a game, and thought why not a memory game like the one in Mario ALl Stars, which by the way I couldn't win anything.
-This game is best enjoyed on a laptop or monitor.
+I wanted to create a game, and thought why not a memory game like the one in Mario ALl Stars, by the way I don't know if I ever won anything at this time.
+This game is best enjoyed on a laptop or monitor but can still be played on mobile
 
 ### 👟 Steps
 
-- Started by finding the image
+- Started by finding the images
 - Created a Notion page for a future blog post on the project
 - Created the app
 - Drafted the overall design of the website using mock data
+- Thought about the different functions necessary to run the project
 - Mapped through data to display the different card
 - Choose a flip card method and developed the main function of the website
 - Created a function to display randomly the cards
@@ -61,7 +62,17 @@ This game is best enjoyed on a laptop or monitor.
 
 ## 🌵 Challenges
 
-- Images quality are super low
+- Images are super low quality
+- Bug on mobile, card were already flip
+- Border when card are selected, had to use outline
+- A lot of functions to deal with, to flip card when selected, to flip card when cleared
+- Bow shaddow when card is flipped (still have to fix it on Firefox)
+
+## 🛸 Improvement / Next Steps
+
+- [] Create test files with [Testing Library](https://testing-library.com/)
+- [] Fix border animation on Firefox when party is win
+- FIx box shaddow on Firefox
 
 # Getting Started with Create React App
 
