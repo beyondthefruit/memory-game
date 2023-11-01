@@ -5,8 +5,6 @@ body {
   font-family: 'DotGothic16', sans-serif, 'Roboto', sans-serif, -apple-system,
     BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
     'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body,
@@ -68,7 +66,6 @@ body,
   color: #2e028d;
 }
 .icon {
-  /* background-color: none; */
   font-size: 1.6rem;
   color: #2e028d;
 }
@@ -115,7 +112,7 @@ body,
   top: 280px;
   transform: translateX(0);
   opacity: 1;
-  transition: all 0.3s linear;
+  transition: all 0.35s ease-in;
   z-index: 10;
 }
 
@@ -149,7 +146,7 @@ body,
     transform: translate(110px) rotate(0.1turn);
   }
   .vicmsg {
-    transition: all 0.5s linear;
+    transition: all 0.45s ease-in;
   }
   .vicmsg-transition {
     transform: translate(200px);
@@ -181,7 +178,7 @@ body,
   width: 62px;
   height: 75px;
   border-radius: 6px;
-  transition: 0.4s;
+  transition: 0.35s;
   transform-style: preserve-3d;
   position: relative;
   cursor: pointer;
@@ -198,7 +195,7 @@ body,
   position: absolute;
   width: 100%;
   height: 100%;
-  border: 1px white solid;
+  border: 1px whiste solid;
   :hover {
     outline: 10px ridge red;
     outline-offset: 6px;
@@ -208,15 +205,13 @@ body,
 .inner {
   transform-style: preserve-3d;
   position: relative;
-  cursor: pointer;
   width: 100%;
   height: 100%;
 }
 
-.shadow-front {
-  box-shadow: -5px -3px -3px;
-}
 .no-shadow {
+  -webkit-box-shadow: 5px 3px 3px black;
+  -moz-box-shadow-: 5px 3px 3px black;
   box-shadow: 5px 3px 3px black;
 }
 
@@ -227,6 +222,8 @@ body,
 .back-face {
   background-color: transparent;
   transform: rotateY(180deg);
+  -webkit-box-shadow: 5px 3px 3px black;
+  -moz-box-shadow-: 5px 3px 3px black;
   box-shadow: 5px 3px 3px black;
 }
 @media screen and (min-width: 650px) {
@@ -239,23 +236,17 @@ body,
   .card-game {
     width: 82px;
     height: 110px;
-    border: 1px white solid;
     border-radius: 6px;
   }
 
-  .card {
-    backface-visibility: hidden;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-  .shadow-front {
-    box-shadow: -10px -5px -5px;
-  }
   .no-shadow {
+    -webkit-box-shadow: 10px 5px 5px;
+    -moz-box-shadow-: 10px 5px 5px;
     box-shadow: 10px 5px 5px black;
   }
   .back-face {
+    -webkit-box-shadow: 10px 5px 5px;
+    -moz-box-shadow-: 10px 5px 5px;
     box-shadow: 10px 5px 5px black;
   }
 }
@@ -264,13 +255,10 @@ body,
     width: 720px;
     height: 500px;
     gap: 25px;
-    perspective: 1000px;
   }
   .card-game {
     width: 90px;
     height: 120px;
-    border: 1px white solid;
-    border-radius: 6px;
   }
 }
 @media screen and (min-width: 1400px) {

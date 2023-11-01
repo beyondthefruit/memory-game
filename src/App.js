@@ -12,7 +12,6 @@ function App() {
   const shuffleCards = shuffle(cards);
   const [card, setCard] = useState(shuffleCards);
   const [currcards, setCurrcards] = useState([]);
-  console.log(currcards);
   const [cardWin, setCardWin] = useState([]);
   // mgt audio, I was using a var Audio = new Audio but every time I was clicking it started a new audio so fixed it by replacing by useState
   const [playing, setPlaying] = useState(false);
@@ -35,11 +34,9 @@ function App() {
     const card1 = cards[currcards[0] - 1];
     const card2 = cards[currcards[1] - 1];
     if (card1.name == card2.name) {
-      // let card1id = card1.id;
-      // let card2id = card2.id;
       setCardWin((prev) => [...prev, card1.id, card2.id]);
       WinSong.play();
-      console.log('@@@@@@@@@@@@@@@@@@@@', cardWin);
+      // console.log('@@@@@@@@@@@@@@@@@@@@', cardWin);
       setCurrcards([]);
       return;
     } else {
@@ -48,10 +45,7 @@ function App() {
     }
   };
 
-  // useEffect(() => {
-  //   check();
-  // }, [currcards]);
-
+  //when all cards have been cleared
   const victory = () => {
     if (cardWin.length === cards.length) {
       setIsExploding(true);
@@ -64,6 +58,7 @@ function App() {
     victory();
   }, [cardWin]);
 
+  // confetti animation props
   const confettiProps = {
     duration: 2500,
     particleCount: 60,
