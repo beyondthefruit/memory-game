@@ -2,24 +2,25 @@
 
 ## 🎮 The Project
 
-➡️ ➡️ [GO TO WEBSITE PROJECT]() ⬅️ ⬅️
+➡️ ➡️ [https://mario-all-stars-memorygame.netlify.app/]() ⬅️ ⬅️
 
 Any of you remember this mini game from Mario 3 All stars : https://www.youtube.com/watch?v=BAhICqmT8Do
-I wanted to create a game, and thought why not a memory game like the one in Mario ALl Stars, by the way I don't know if I ever won anything at this time.
-This game is best enjoyed on a laptop or monitor but can still be played on mobile
+I wanted to create a game, and thought why not a memory game like the one in Mario All Stars, by the way I don't know if I ever won anything at this game.
+This game is best enjoyed on a laptop or monitor but can be played on mobile
 
 ### 👟 Steps
 
-- Started by finding the images
+- Started by finding the images for the project
 - Created a Notion page for a future blog post on the project
-- Created the app
+- Created the app using React
 - Drafted the overall design of the website using mock data
-- Thought about the different functions necessary to run the project
-- Mapped through data to display the different card
-- Choose a flip card method and developed the main function of the website
+- Thought about the different functions needed to run the project
+- Mapped through data to display the different cards
+- Choose a flip card method and developed thefunctions of the website
 - Created a function to display randomly the cards
 - Installed a confetti animation from a library
 - Created a victory animation
+- Fixed bugs (such as box shadow on Firefox)
 
 🍐 [@beyondthefruit (Kevin Hanard)](https://github.com/beyondthefruit)
 
@@ -54,7 +55,6 @@ This game is best enjoyed on a laptop or monitor but can still be played on mobi
 
 ## 📱 Media Queries
 
-- mobileS:`@media screen and (min-width: 320px)`
 - mobileL:`@media screen and (min-width: 650px)`
 - laptop: `@media screen and (min-width: 960px)`
 - laptopL: `@media screen and (min-width: 1200px)`
@@ -64,15 +64,14 @@ This game is best enjoyed on a laptop or monitor but can still be played on mobi
 
 - Images are super low quality
 - Bug on mobile, card were already flip
-- Border when card are selected, had to use outline
+- Border when card are selected => had to use outline
 - A lot of functions to deal with, to flip card when selected, to flip card when cleared
-- Bow shaddow when card is flipped (still have to fix it on Firefox)
+- Box shaddow when card is flipped wasn't working on Firefox but it's fix now
 
 ## 🛸 Improvement / Next Steps
 
 - [] Create test files with [Testing Library](https://testing-library.com/)
 - [] Fix border animation on Firefox when party is win
-- FIx box shaddow on Firefox
 
 # Getting Started with Create React App
 
